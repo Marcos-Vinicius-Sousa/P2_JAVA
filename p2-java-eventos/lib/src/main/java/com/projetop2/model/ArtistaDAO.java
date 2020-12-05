@@ -46,10 +46,10 @@ public class ArtistaDAO {
         jdbc.update(sql, new Object[] {id});
     }
     
-    public void updateArtista(int id,Evento evt) {
+    public void updateArtista(int id,Artista art) {
     	String sql = "UPDATE artista SET nm_artista = ?, nm_estilo_musical = ? WHERE id = ?";
     	 jdbc.update(sql, new Object[]{
-         		evt.getNome(), evt.getLocal(),id
+         		art.getNomeArtista(), art.getEstiloMusical(),id
          });
     }
 }
