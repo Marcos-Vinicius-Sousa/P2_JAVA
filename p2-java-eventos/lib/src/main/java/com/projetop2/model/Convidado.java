@@ -7,6 +7,8 @@ public class Convidado {
 	
 	private String nomeConvidado;
 	private String rg;
+	
+	
 	public String getNomeConvidado() {
 		return nomeConvidado;
 	}
