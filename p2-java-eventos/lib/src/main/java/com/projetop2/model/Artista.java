@@ -5,6 +5,8 @@ public class Artista {
 
 	private String nomeArtista;
 	private String estiloMusical;
+	
+	
 	public String getNomeArtista() {
 		return nomeArtista;
 	}
