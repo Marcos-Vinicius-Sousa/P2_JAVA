@@ -4,7 +4,9 @@ public class Evento {
 
 	private String nome;
 	private String local;
-	private String data;
+	
+	
+	
 	public String getNome() {
 		return nome;
 	}
@@ -16,12 +18,6 @@ public class Evento {
 	}
 	public void setLocal(String local) {
 		this.local = local;
-	}
-	public String getData() {
-		return data;
-	}
-	public void setData(String data) {
-		this.data = data;
 	}
 	
 	
