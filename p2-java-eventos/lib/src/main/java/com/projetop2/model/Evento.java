@@ -7,6 +7,14 @@ public class Evento {
 	
 	
 	
+	public Evento(String string, String string2) {
+		
+	}
+
+	public Evento() {
+		
+	}
+
 	public String getNome() {
 		return nome;
 	}
