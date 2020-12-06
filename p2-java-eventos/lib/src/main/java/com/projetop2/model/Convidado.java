@@ -9,6 +9,11 @@ public class Convidado {
 	private String rg;
 	
 	
+	public Convidado(String string, String string2) {
+		
+	}
+	
+
 	public String getNomeConvidado() {
 		return nomeConvidado;
 	}
