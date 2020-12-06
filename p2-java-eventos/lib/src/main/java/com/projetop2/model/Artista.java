@@ -7,6 +7,14 @@ public class Artista {
 	private String estiloMusical;
 	
 	
+	public Artista(String string, String string2) {
+		
+	}
+	
+	public Artista() {
+		
+	}
+
 	public String getNomeArtista() {
 		return nomeArtista;
 	}
