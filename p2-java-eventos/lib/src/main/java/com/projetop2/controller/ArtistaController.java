@@ -26,7 +26,7 @@ public class ArtistaController {
     @GetMapping("/artista")
     public String cadastrar(Model model) {
         model.addAttribute("art",new Artista());
-        return "formarti";
+        return "formartista";
     }
 
     @PostMapping("/artista")

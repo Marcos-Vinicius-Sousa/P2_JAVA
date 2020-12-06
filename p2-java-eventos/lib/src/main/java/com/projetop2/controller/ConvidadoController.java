@@ -26,7 +26,7 @@ public class ConvidadoController {
     @GetMapping("/convidado")
     public String cadastrar(Model model) {
         model.addAttribute("con",new Evento());
-        return "formcon";
+        return "formconvidado";
     }
 
     @PostMapping("/convidao")
