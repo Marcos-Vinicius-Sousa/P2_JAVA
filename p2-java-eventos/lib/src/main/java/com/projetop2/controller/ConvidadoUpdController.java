@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.projetop2.model.Convidado;
 import com.projetop2.model.ConvidadoService;
-import com.projetop2.model.Evento;
-import com.projetop2.model.EventoService;
+
 
 @Controller
 public class ConvidadoUpdController {
@@ -28,7 +27,7 @@ public class ConvidadoUpdController {
 		Convidado evt = new Convidado((String)antigo.get("nm_Convidado"),(String)antigo.get("rg"));
 		model.addAttribute("antigo",evt);
 		model.addAttribute("id",id);
-		return "formevent";
+		return "formconvidado";
     }
 	
 	@PostMapping("/updco/{id}")
