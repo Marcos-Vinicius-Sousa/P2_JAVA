@@ -24,7 +24,7 @@ public class EventoController {
     @GetMapping("/evento")
     public String cadastrar(Model model) {
         model.addAttribute("evt",new Evento());
-        return "formevent";
+        return "formevento";
     }
 
     @PostMapping("/evento")
@@ -49,7 +49,7 @@ public class EventoController {
 		EventoService adao = context.getBean(EventoService.class);
 		List<Map<String,Object>> eventos = adao.getEventos();
 		model.addAttribute("eventos",eventos);
-		return "formlisteventos";
+		return "listaeventos";
 	}
 	
 	@PostMapping("/apagareve/{id}")

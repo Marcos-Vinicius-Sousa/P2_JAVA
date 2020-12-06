@@ -51,7 +51,7 @@ public class ArtistaController {
 		ArtistaService pdao = context.getBean(ArtistaService.class);
 		List<Map<String,Object>> artistas = pdao.getArtistas();
 		model.addAttribute("artistas",artistas);
-		return "formlistartistas";
+		return "listartistas";
 	}
 	
 	@PostMapping("/apagarart/{id}")

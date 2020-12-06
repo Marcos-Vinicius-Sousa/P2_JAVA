@@ -51,7 +51,7 @@ public class ConvidadoController {
 		ConvidadoService pdao = context.getBean(ConvidadoService.class);
 		List<Map<String,Object>> convidados = pdao.getConvidados();
 		model.addAttribute("convidados",convidados);
-		return "formlistconvidados";
+		return "listaconvidados";
 	}
 	
 	@PostMapping("/apagarcon/{id}")
