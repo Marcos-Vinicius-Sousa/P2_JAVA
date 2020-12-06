@@ -1,7 +1,6 @@
 package com.projetop2.controller;
 
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -19,7 +18,7 @@ public class EventoUpdController {
 	@Autowired
 	private ApplicationContext context;
 	
-	@GetMapping("/upd/{id}")
+	@GetMapping("/updev/{id}")
     public String updateFormEvt(@PathVariable("id") int id, Model model){
 		EventoService edao = context.getBean(EventoService.class);
 		Map<String,Object> antigo = edao.getEvento(id);
@@ -29,7 +28,7 @@ public class EventoUpdController {
 		return "formevent";
     }
 	
-	@PostMapping("/upd/{id}")
+	@PostMapping("/updev/{id}")
 	public String updateEv(@PathVariable("id") int id,@ModelAttribute Evento evt, Model model) {
 		EventoService edao = context.getBean(EventoService.class);
 		edao.updateEvento(id, evt);

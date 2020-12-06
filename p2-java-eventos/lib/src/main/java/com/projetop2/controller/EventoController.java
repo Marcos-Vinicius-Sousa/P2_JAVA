@@ -35,7 +35,7 @@ public class EventoController {
         return "eventosucesso";
     }
     
-    @GetMapping("descr/{id}")
+    @GetMapping("descreve/{id}")
     public String read(@PathVariable("id") int id, Model model){
 		EventoService edao = context.getBean(EventoService.class);
 		Map<String,Object> evento = edao.getEvento(id);
@@ -46,13 +46,13 @@ public class EventoController {
 	
 	@GetMapping("/eventos")
 	public String listar(Model model) {
-		EventoService pdao = context.getBean(EventoService.class);
-		List<Map<String,Object>> eventos = pdao.getEventos();
+		EventoService adao = context.getBean(EventoService.class);
+		List<Map<String,Object>> eventos = adao.getEventos();
 		model.addAttribute("eventos",eventos);
 		return "formlisteventos";
 	}
 	
-	@PostMapping("/apagar/{id}")
+	@PostMapping("/apagareve/{id}")
 	public String deletar(@PathVariable("id") int id,Model model) {
 		EventoService pdao = context.getBean(EventoService.class);
 		pdao.deleteEvento(id);

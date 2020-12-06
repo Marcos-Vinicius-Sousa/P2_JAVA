@@ -37,7 +37,7 @@ public class ConvidadoController {
         return "convidadosucesso";
     }
     
-    @GetMapping("descr/{id}")
+    @GetMapping("descrcon/{id}")
     public String read(@PathVariable("id") int id, Model model){
 		ConvidadoService edao = context.getBean(ConvidadoService.class);
 		Map<String,Object> convidado = edao.getConvidado(id);
@@ -46,7 +46,7 @@ public class ConvidadoController {
 		return "convidadosucesso";
     }
 	
-	@GetMapping("/eventos")
+	@GetMapping("/convidados")
 	public String listar(Model model) {
 		ConvidadoService pdao = context.getBean(ConvidadoService.class);
 		List<Map<String,Object>> convidados = pdao.getConvidados();
@@ -54,7 +54,7 @@ public class ConvidadoController {
 		return "formlistconvidados";
 	}
 	
-	@PostMapping("/apagar/{id}")
+	@PostMapping("/apagarcon/{id}")
 	public String deletar(@PathVariable("id") int id,Model model) {
 		ConvidadoService pdao = context.getBean(ConvidadoService.class);
 		pdao.deleteConvidado(id);

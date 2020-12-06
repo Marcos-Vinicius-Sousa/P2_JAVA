@@ -1,5 +1,6 @@
 package com.projetop2.controller;
 
+
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import com.projetop2.model.Artista;
 import com.projetop2.model.ArtistaService;
 
@@ -35,7 +37,7 @@ public class ArtistaController {
         return "artistasucesso";
     }
     
-    @GetMapping("descr/{id}")
+    @GetMapping("descrart/{id}")
     public String read(@PathVariable("id") int id, Model model){
 		ArtistaService adao = context.getBean(ArtistaService.class);
 		Map<String,Object> artista = adao.getArtista(id);
@@ -52,7 +54,7 @@ public class ArtistaController {
 		return "formlistartistas";
 	}
 	
-	@PostMapping("/apagar/{id}")
+	@PostMapping("/apagarart/{id}")
 	public String deletar(@PathVariable("id") int id,Model model) {
 		ArtistaService pdao = context.getBean(ArtistaService.class);
 		pdao.deleteArtista(id);
