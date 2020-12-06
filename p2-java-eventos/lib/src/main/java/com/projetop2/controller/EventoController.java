@@ -40,22 +40,22 @@ public class EventoController {
 		Map<String,Object> evento = edao.getEvento(id);
 		Evento evt = new Evento((String)evento.get("nome"),(String)evento.get("local"));
 		model.addAttribute("evt",evt);
-		return "produtosucesso";
+		return "eventosucesso";
     }
 	
-	@GetMapping("/produtos")
+	@GetMapping("/eventos")
 	public String listar(Model model) {
 		EventoService pdao = context.getBean(EventoService.class);
-		List<Map<String,Object>> produtos = pdao.getEventos();
-		model.addAttribute("produtos",produtos);
-		return "formlista";
+		List<Map<String,Object>> eventos = pdao.getEventos();
+		model.addAttribute("eventos",eventos);
+		return "formlisteventos";
 	}
 	
 	@PostMapping("/apagar/{id}")
 	public String deletar(@PathVariable("id") int id,Model model) {
 		EventoService pdao = context.getBean(EventoService.class);
 		pdao.deleteEvento(id);
-		return "redirect:/produtos";
+		return "redirect:/eventos";
 	}
 
 	
