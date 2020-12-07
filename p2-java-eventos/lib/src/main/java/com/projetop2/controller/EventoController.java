@@ -35,14 +35,7 @@ public class EventoController {
         return "eventosucesso";
     }
     
-    @GetMapping("descreve/{id}")
-    public String read(@PathVariable("id") int id, Model model){
-		EventoService edao = context.getBean(EventoService.class);
-		Map<String,Object> evento = edao.getEvento(id);
-		Evento evt = new Evento((String)evento.get("nome"),(String)evento.get("local"));
-		model.addAttribute("evt",evt);
-		return "eventosucesso";
-    }
+   
 	
 	@GetMapping("/eventos")
 	public String listar(Model model) {
