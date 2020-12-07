@@ -51,15 +51,18 @@
 
 <br><br>
 <br><br>
-<form action="#" th:action="@{/convidado}" th:object="${con}" method=post>
+
+ <form action="#" th:action="@{/convidado}" th:object="${con}" method=post>
   <div class="form-group">
-    <label for="exampleInputEmail1">Nome do Convidado</label>
-    <input type="text" class="form-control"  placeholder="Nome do Convidado">
+    <label >Nome do Convidado:</label>
+    <input type="text" th:field="*{nomeConvidado}" class="form-control"
+    	 placeholder="Nome do Convidado">
     
   </div>
   <div class="form-group">
     <label >RG:</label>
-    <input type="text" class="form-control"  placeholder="RG">
+    <input type="text"  class="form-control"
+    	  th:field="*{rg}" placeholder="RG">
   </div>
   
   <button type="submit" class="btn btn-primary">Enviar</button>

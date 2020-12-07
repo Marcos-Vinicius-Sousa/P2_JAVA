@@ -31,7 +31,7 @@ public class ArtistaController {
 
     @PostMapping("/artista")
     public String acao(@ModelAttribute Artista art,Model model) {
-        model.addAttribute("artist",art);
+        model.addAttribute("art",art);
         ArtistaService adao = context.getBean(ArtistaService.class);
         adao.insert(art);
         return "artistasucesso";
@@ -43,15 +43,15 @@ public class ArtistaController {
 		Map<String,Object> artista = adao.getArtista(id);
 		Artista art = new Artista((String)artista.get("nm_Artista"),(String)artista.get("nm_esilo_musical"));
 		model.addAttribute("art",art);
-		return "eventosucesso";
+		return "artistasucesso";
     }
 	
 	@GetMapping("/artistas")
-	public String listar(Model model) {
-		ArtistaService pdao = context.getBean(ArtistaService.class);
-		List<Map<String,Object>> artistas = pdao.getArtistas();
-		model.addAttribute("artistas",artistas);
-		return "listartistas";
+	public String listarArt(Model model) {
+		ArtistaService adao = context.getBean(ArtistaService.class);
+		List<Map<String,Object>> artista = adao.getArtistas();
+		model.addAttribute("artista",artista);
+		return "listaartistas";
 	}
 	
 	@PostMapping("/apagarart/{id}")

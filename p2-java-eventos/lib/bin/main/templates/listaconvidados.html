@@ -5,10 +5,10 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="display:grid;place-items:center">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Projeto DSI</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,18 +42,63 @@
         </div>
       </li>
       
-      <li class="nav-item">
+       <li class="nav-item">
         <a class="nav-link" href="#">Sobre</a>
       </li>
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+   
   </div>
 </nav>
 
+<br><br><br><br>
+
+
+<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Lista de Convidados</h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+            class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+      <table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">Evento</th>
+            <th class="text-center">Local</th>
+            <th class="text-center">Alterar</th>
+            <th class="text-center">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <tr th:each="cond : ${convidados}">
+            	<td th:text="${cond.id}"></td>
+            	<td th:text="${cond.nm_convidado}"></td>
+            	<td th:text="${cond.rg}"></td>
+            	<td>
+            		<a th:href="@{'updco/' + ${cond.id}}">
+            			<input type="submit" class="btn btn-success" value="Atualizar">
+            		</a>        		
+            	</td>
+            	<td> 
+            		<form th:action="@{'apagarcon/' + ${cond.id}}" method=post>
+            			<input type="submit" class="btn btn-danger btn-rounded btn-sm my-0" value="Apagar">
+            		</form>
+            	</td>
+       		</tr>
+           
+          </tr>
+         
+          
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+    
+    
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

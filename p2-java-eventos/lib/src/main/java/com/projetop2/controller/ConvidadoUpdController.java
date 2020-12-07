@@ -27,7 +27,7 @@ public class ConvidadoUpdController {
 		Convidado evt = new Convidado((String)antigo.get("nm_Convidado"),(String)antigo.get("rg"));
 		model.addAttribute("antigo",evt);
 		model.addAttribute("id",id);
-		return "formconvidado";
+		return "convidadoupdt";
     }
 	
 	@PostMapping("/updco/{id}")

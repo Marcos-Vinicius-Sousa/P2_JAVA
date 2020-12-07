@@ -14,6 +14,11 @@ public class Convidado {
 	}
 	
 
+	public Convidado() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getNomeConvidado() {
 		return nomeConvidado;
 	}

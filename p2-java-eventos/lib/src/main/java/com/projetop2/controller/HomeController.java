@@ -21,4 +21,11 @@ public class HomeController {
     	model.addAttribute("nome", nome );
     	return "principal";
     }
+    
+    @GetMapping("/")
+    public String home(Model model ) {
+    	String nome = "Cadastro de Eventos";
+    	model.addAttribute("nome", nome );
+    	return "principal";
+    }
 } 

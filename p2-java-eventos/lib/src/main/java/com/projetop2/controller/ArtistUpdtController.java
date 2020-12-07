@@ -24,18 +24,18 @@ public class ArtistUpdtController {
 	
 	@GetMapping("/updart/{id}")
     public String updateFormArt(@PathVariable("id") int id, Model model){
-		ArtistaService edao = context.getBean(ArtistaService.class);
-		Map<String,Object> antigo = edao.getArtista(id);
+		ArtistaService adao = context.getBean(ArtistaService.class);
+		Map<String,Object> antigo = adao.getArtista(id);
 		Artista art = new Artista((String)antigo.get("nm_artista"),(String)antigo.get("nm_estilo_musical"));
 		model.addAttribute("antigo",art);
 		model.addAttribute("id",id);
-		return "formartista";
+		return "artistaupdt";
     }
 	
 	@PostMapping("/updart/{id}")
 	public String updateEv(@PathVariable("id") int id,@ModelAttribute Artista art, Model model) {
-		ArtistaService edao = context.getBean(ArtistaService.class);
-		edao.updateArtista(id, art);
+		ArtistaService adao = context.getBean(ArtistaService.class);
+		adao.updateArtista(id, art);
 		return "redirect:/artistas";
 	}
 }

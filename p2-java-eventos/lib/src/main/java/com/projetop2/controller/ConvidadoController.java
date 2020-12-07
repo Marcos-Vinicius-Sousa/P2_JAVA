@@ -25,39 +25,39 @@ public class ConvidadoController {
 
     @GetMapping("/convidado")
     public String cadastrar(Model model) {
-        model.addAttribute("con",new Evento());
+        model.addAttribute("con",new Convidado());
         return "formconvidado";
     }
 
-    @PostMapping("/convidao")
-    public String acao(@ModelAttribute Convidado cnd,Model model) {
-        model.addAttribute("event",cnd);
+    @PostMapping("/convidado")
+    public String acao(@ModelAttribute Convidado con,Model model) {
+        model.addAttribute("con",con);
         ConvidadoService cdao = context.getBean(ConvidadoService.class);
-        cdao.insert(cnd);
+        cdao.insert(con);
         return "convidadosucesso";
     }
     
     @GetMapping("descrcon/{id}")
     public String read(@PathVariable("id") int id, Model model){
-		ConvidadoService edao = context.getBean(ConvidadoService.class);
-		Map<String,Object> convidado = edao.getConvidado(id);
+		ConvidadoService cdao = context.getBean(ConvidadoService.class);
+		Map<String,Object> convidado = cdao.getConvidado(id);
 		Convidado con = new Convidado((String)convidado.get("nm_convidado"),(String)convidado.get("rg"));
 		model.addAttribute("con",con);
 		return "convidadosucesso";
     }
 	
 	@GetMapping("/convidados")
-	public String listar(Model model) {
-		ConvidadoService pdao = context.getBean(ConvidadoService.class);
-		List<Map<String,Object>> convidados = pdao.getConvidados();
-		model.addAttribute("convidados",convidados);
+	public String listarConv(Model model) {
+		ConvidadoService cdao = context.getBean(ConvidadoService.class);
+		List<Map<String,Object>> con = cdao.getConvidados();
+		model.addAttribute("convidados",con);
 		return "listaconvidados";
 	}
 	
 	@PostMapping("/apagarcon/{id}")
 	public String deletar(@PathVariable("id") int id,Model model) {
-		ConvidadoService pdao = context.getBean(ConvidadoService.class);
-		pdao.deleteConvidado(id);
+		ConvidadoService cdao = context.getBean(ConvidadoService.class);
+		cdao.deleteConvidado(id);
 		return "redirect:/convidados";
 	}
 

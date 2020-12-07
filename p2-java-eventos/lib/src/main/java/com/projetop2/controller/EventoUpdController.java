@@ -25,7 +25,7 @@ public class EventoUpdController {
 		Evento evt = new Evento((String)antigo.get("nome"),(String)antigo.get("local"));
 		model.addAttribute("antigo",evt);
 		model.addAttribute("id",id);
-		return "formevent";
+		return "eventoupdt";
     }
 	
 	@PostMapping("/updev/{id}")

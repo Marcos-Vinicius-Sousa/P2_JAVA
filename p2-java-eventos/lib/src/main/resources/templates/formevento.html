@@ -55,12 +55,14 @@
 <form action="#" th:action="@{/evento}" th:object="${evt}" method=post>
   <div class="form-group">
     <label >Nome do Evento</label>
-    <input type="text" class="form-control"  placeholder="Nome do Evento">
+    <input type="text" th:field="*{nome}" class="form-control"
+    	 placeholder="Nome do Evento">
     
   </div>
   <div class="form-group">
     <label >Local</label>
-    <input type="text" class="form-control"  placeholder="Local">
+    <input type="text" th:field="*{local}" class="form-control"
+    	  placeholder="Local">
   </div>
   
   <button type="submit" class="btn btn-primary">Enviar</button>
