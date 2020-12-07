@@ -31,7 +31,7 @@ public class ConvidadoUpdController {
     }
 	
 	@PostMapping("/updco/{id}")
-	public String updateEv(@PathVariable("id") int id,@ModelAttribute Convidado evt, Model model) {
+	public String updateCo(@PathVariable("id") int id,@ModelAttribute Convidado evt, Model model) {
 		ConvidadoService edao = context.getBean(ConvidadoService.class);
 		edao.updateConvidado(id, evt);
 		return "redirect:/convidados";

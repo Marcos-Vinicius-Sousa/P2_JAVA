@@ -49,7 +49,7 @@ public class ConvidadoDAO {
     }
     
     public void updateConvidado(int id,Convidado cvd) {
-    	String sql = "UPDATE evento SET nm_convidado = ?, rg = ? WHERE id = ?";
+    	String sql = "UPDATE convidado SET nm_convidado = ?, rg = ? WHERE id = ?";
     	 jdbc.update(sql, new Object[]{
          		cvd.getNomeConvidado(), cvd.getRg(),id
          });
