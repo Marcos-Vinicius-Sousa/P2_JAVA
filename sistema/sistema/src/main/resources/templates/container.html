@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sistema T2S • Cadastrar</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+	crossorigin="anonymous">
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.order-md-1 {
+	margin: 0 auto;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+<!-- Custom styles for this template -->
+<link href="css/form-validation.css" rel="stylesheet">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light bg-light"><img src="https://i.imgur.com/QolVQuN.png" style="width: 3%; margin: 5px" >
+		<a class="navbar-brand" href="/">Sistema <i>T2S</i></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarsExample04" aria-controls="navbarsExample04"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExample04">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="/">Inicio</a>
+				</li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="dropdown04"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastrar</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown04">
+						<a class="dropdown-item" href="/container">Container</a> <a
+							class="dropdown-item" href="/movimentacao">Movimentação</a>
+					</div></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="dropdown04"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listar</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown04">
+						<a class="dropdown-item" href="/listacontainer">Containers</a> <a
+							class="dropdown-item" href="/listamovimentacao">Movimentações</a>
+					</div></li>
+				<li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 order-md-1">
+				<h4 class="mb-3">Cadastro Container</h4>
+				<form class="needs-validation" action="#" method="post"
+					th:action="@{/container}" th:object="${container}">
+					<div class="mb-3">
+						<label for="username">Nome do Cliente:</label>
+						<div class="input-group">
+							<input class="form-control" th:field="*{nomeCliente}" required>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label>Número do Container:</label>
+						<div class="input-group">
+							<input class="form-control" maxlength="11"
+								th:field="*{numContainer}" required>
+						</div>
+					</div>
+					<!-- <label>Tipo:</label>
+		<input class="form-control" th:field="*{tipo}" required>-->
+
+					<div class="mb-3">
+						<p>Tipo:</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="20"
+								id="flexRadioDefault1" value="20" th:field="*{tipo}"> <label
+								class="form-check-label" for="flexRadioDefault1"> 20 </label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="40"
+								id="flexRadioDefault2" value="40" th:field="*{tipo}"> <label
+								class="form-check-label" for="flexRadioDefault2"> 40 </label>
+						</div>
+					</div>
+
+					<!-- <label>Status:</label>
+		<input class="form-control" th:field="*{status}" required> -->
+
+					<div class="mb-3">
+						<p>Status:</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="20"
+								id="flexRadioDefault1" value="Cheio" th:field="*{status}">
+							<label class="form-check-label" for="flexRadioDefault1">
+								Cheio </label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="40"
+								id="flexRadioDefault2" value="Vazio" th:field="*{status}">
+							<label class="form-check-label" for="flexRadioDefault2">
+								Vazio </label>
+						</div>
+					</div>
+
+					<!-- <label>Categoria:</label>
+		<input class="form-control" th:field="*{categoria}" required> -->
+
+					<div class="mb-3">
+						<p>Categoria:</p>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="20"
+								id="flexRadioDefault1" value="Importacao"
+								th:field="*{categoria}"> <label class="form-check-label"
+								for="flexRadioDefault1"> Importação </label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="40"
+								id="flexRadioDefault2" value="Exportacao"
+								th:field="*{categoria}"> <label class="form-check-label"
+								for="flexRadioDefault2"> Exportação </label>
+						</div>
+					</div>
+
+
+
+
+
+					<button class="btn btn-outline-dark" type="submit"
+						value="getContainerForm">Cadastrar</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+</html>
